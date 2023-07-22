@@ -1,0 +1,102 @@
+.weather-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .weather-card.dark {
+    border-color: #666;
+  }
+  
+  .weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .weather-info div {
+    margin-right: 20px;
+  }
+  
+  .weather-info .temperature {
+    font-size: 32px;
+  }
+  
+  .weather-details {
+    font-size: 18px;
+  }
+  
+  .weather-details div {
+    margin-bottom: 10px;
+  }
+  
+  .search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-box svg {
+    position: absolute;
+    left: 10px;
+  }
+  
+  .search-box input {
+    padding: 10px 40px 10px 35px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .search-box .suggestion-container {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .search-box .suggestion-container div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  /* Add more styles as needed */
+  
+  /* Dark Mode */
+  .weather-container.dark {
+    color: #fff;
+  }
+  
+  .weather-card.dark {
+    background-color: #444;
+    border-color: #666;
+  }
+  
+  .search-box.dark input {
+    background-color: #333;
+    border-color: #666;
+    color: #fff;
+  }
+  
+  .search-box.dark .suggestion-container {
+    background-color: #444;
+    border-color: #666;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 600px) {
+    .weather-info {
+      flex-direction: column;
+    }
+  }
+  
