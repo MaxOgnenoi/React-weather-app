@@ -1,7 +1,9 @@
 import React from "react";
 import moment from "moment";
-import { WiDaySunny, WiRain, WiCloudy } from "react-icons/wi";
+import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy } from "react-icons/wi";
 import "../styles/Weather.css";
+
+
 
 const getWeatherIcon = (weatherDescription) => {
   switch (weatherDescription) {
@@ -9,10 +11,13 @@ const getWeatherIcon = (weatherDescription) => {
       return <WiDaySunny size={64} />;
     case "Rain":
       return <WiRain size={64} />;
-    default:
+    case "Clouds":
       return <WiCloudy size={64} />;
+    default:
+      return <WiDayCloudy size={64} />;
   }
 };
+
 
 function WeatherCard({ weatherData }) {
   const { name, main, weather, sys } = weatherData;

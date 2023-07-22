@@ -1,0 +1,72 @@
+/* Styles for WeatherHourlyForecast.js component */
+
+.hourly-forecast-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .hourly-forecast-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .hourly-forecast-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .weather-card {
+    flex: 0 1 calc(33.33% - 20px);
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .weather-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .weather-card.dark {
+    border-color: #666;
+  }
+  
+  .weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .weather-info div {
+    margin-right: 15px;
+  }
+  
+  .weather-info .temperature {
+    font-size: 28px;
+  }
+  
+  .weather-details {
+    font-size: 16px;
+  }
+  
+  .weather-details div {
+    margin-bottom: 5px;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 600px) {
+    .hourly-forecast-cards {
+      flex-direction: column;
+    }
+  
+    .weather-card {
+      flex: 0 1 calc(50% - 20px);
+    }
+  }
+  
