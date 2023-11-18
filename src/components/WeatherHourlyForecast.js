@@ -3,7 +3,7 @@ import WeatherCard from "./WeatherCard";
 import "../styles/WeatherHourlyForecast.css";
 
 function WeatherHourlyForecast({ hourlyForecastData }) {
-  const hourlyForecastList = hourlyForecastData.list.slice(0, 6); // Get the first 6 hours of forecast
+  const hourlyForecastList = hourlyForecastData.hourly.slice(0, 6); // Get the first 6 hours of forecast
 
   return (
     <div className="hourly-forecast-container">
