@@ -23,7 +23,7 @@ function SearchBox({ setCity }) {
         onChange={handleCityChange}
         placeholder="Search for a city..."
       />
-      <button type="submit">Search</button>
+      <button className="searchBtn" type="submit">Search</button>
     </form>
   );
 }
