@@ -5,7 +5,7 @@ import SearchBox from "./SearchBox";
 import "../styles/Weather.css";
 
 function Weather() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("New York City");
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
