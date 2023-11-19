@@ -12,6 +12,7 @@ function SearchBox({ setCity }) {
   const handleCitySubmit = (event) => {
     event.preventDefault();
     setCity(city);
+    setCityValue('');
   };
 
   return (
