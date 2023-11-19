@@ -46,41 +46,34 @@
   }
   
   .search-box input {
+    background: linear-gradient(to right, #dfb6b2, #854f6c);
+    color: black;
     box-sizing: border-box; 
+    border: none;
     height: 40px;
     padding-left: 30px;
     border-radius: 20px 0 0 20px;
     width: 100%;
     font-size: 16px;
+    outline: none;
   }
   
   .searchBtn {
+    cursor: pointer;
+    border: none;
+    background-color: #854f6c;
     font-size: 20px;
     box-sizing: border-box; 
     width: 30%;
     height: 40px;
     border-radius: 0 20px 20px 0;
+    outline: none;
   }
   
 
-  .search-box .suggestion-container {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    max-height: 200px;
-    overflow-y: auto;
-  }
+  
   
 
-
-  .search-box .suggestion-container div {
-    padding: 10px;
-    cursor: pointer;
-  }
   
   /* Add more styles as needed */
   
