@@ -12,7 +12,7 @@ function App() {
   return (
     <div className={`app-container ${isDarkMode ? "dark" : ""}`}>
       <header>
-        <h1>Weather App</h1>
+        <h1>Max's Weather</h1>
         <button className="dark-mode-toggle" onClick={handleToggleDarkMode}>
           {isDarkMode ? "Light Mode" : "Dark Mode"}
         </button>
