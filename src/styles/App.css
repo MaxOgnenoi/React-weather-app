@@ -2,14 +2,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f1f1f1;
+  background-color: rgb(11, 25, 51)
 }
 
 .app-container {
+  color: #fbe4d8;
   max-width: 600px;
+  height: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #190019;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
