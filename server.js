@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
+app.use(cors());
 const PORT = process.env.PORT || 3012;
 
 // Serve static files from the build folder
