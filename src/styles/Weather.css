@@ -4,7 +4,8 @@
     margin-top: 10px;
     border-radius: 8px;
     text-align: center;
-    font-size: 44px;
+    font-size: 3rem;
+    font-weight: 100;
     
   }
   
@@ -24,12 +25,10 @@
     margin-right: 20px;
   }
   
-  .weather-info .temperature {
-    font-size: 32px;
-  }
+  
   
   .weather-details {
-    font-size: 18px;
+    font-size: 3rem;
   }
   
   .weather-details div {
