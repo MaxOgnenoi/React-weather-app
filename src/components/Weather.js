@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherCard from "./WeatherCard";
-import WeatherFiveDayForecast from "./WeatherFiveDayForecast";
+import WeatherFiveDayForecast from "./WeatherFiveDayForecast"; // Ensure proper import
 import WeatherHourlyForecast from "./WeatherHourlyForecast";
 import WeatherMap from "./WeatherMap";
 import SearchBox from "./SearchBox";
@@ -10,46 +10,33 @@ import "../styles/Weather.css";
 function Weather() {
   const [city, setCity] = useState("New York City");
   const [weatherData, setWeatherData] = useState(null);
-  const [hourlyForecastData, setHourlyForecastData] = useState(null); // State for hourly forecast data
+  const [hourlyForecastData, setHourlyForecastData] = useState(null);
+  const [forecastData, setForecastData] = useState(null); // Add state for forecast data
 
   useEffect(() => {
-    // Fetch current weather data
-    if (city) {
-      axios
-        .get(
+    const fetchData = async () => {
+      try {
+        const currentWeatherResponse = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
-        )
-        .then((response) => {
-          setWeatherData(response.data);
-        })
-        .catch((error) => {
-          console.log("Error fetching weather data:", error);
-        });
+        );
+        setWeatherData(currentWeatherResponse.data);
 
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
-        )
-        .then((response) => {
-          setWeatherData(response.data);
-          console.log("Weather Data:", response.data);
-        })
-        .catch((error) => {
-          console.log("Error fetching weather data:", error);
-        });
-
-
-      // Fetch hourly forecast data
-      axios
-        .get(
+        const hourlyForecastResponse = await axios.get(
           `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
-        )
-        .then((response) => {
-          setHourlyForecastData(response.data);
-        })
-        .catch((error) => {
-          console.log("Error fetching hourly forecast data:", error);
-        });
+        );
+        setHourlyForecastData(hourlyForecastResponse.data);
+
+        const forecastResponse = await axios.get( // Fetch 5-day forecast
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
+        );
+        setForecastData(forecastResponse.data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+    };
+
+    if (city) {
+      fetchData();
     }
   }, [city]);
 
@@ -58,6 +45,7 @@ function Weather() {
       <SearchBox setCity={setCity} />
       {weatherData && <WeatherCard weatherData={weatherData} />}
       {hourlyForecastData && <WeatherHourlyForecast hourlyForecastData={hourlyForecastData} />}
+      {forecastData && <WeatherFiveDayForecast forecastData={forecastData} />} {/* Include WeatherFiveDayForecast component */}
       {weatherData && <WeatherMap weatherData={weatherData} />}
     </div>
   );

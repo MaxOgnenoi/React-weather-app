@@ -14,7 +14,8 @@ function WeatherMap({ weatherData }) {
 
   useEffect(() => {
     if (coord) {
-      const map = document.querySelector(".map-container .map");
+      const map = document.querySelector(".map-container .map .leaflet-container");
+
       if (map) {
         map.scrollIntoView();
       }
