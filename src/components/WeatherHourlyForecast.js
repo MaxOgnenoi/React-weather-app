@@ -2,9 +2,8 @@ import React from "react";
 import WeatherCard from "./WeatherCard";
 import "../styles/WeatherHourlyForecast.css";
 
-function WeatherHourlyForecast({ hourlyForecastData }) {
+const WeatherHourlyForecast = ({ hourlyForecastData }) => {
   if (!hourlyForecastData || !hourlyForecastData.list) {
-    // Handle the case when data is undefined
     return null;
   }
 
@@ -20,6 +19,6 @@ function WeatherHourlyForecast({ hourlyForecastData }) {
       </div>
     </div>
   );
-}
+};
 
 export default WeatherHourlyForecast;

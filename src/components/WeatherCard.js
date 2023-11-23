@@ -19,7 +19,7 @@ const getWeatherIcon = (weatherDescription) => {
 };
 
 
-function WeatherCard({ weatherData }) {
+const WeatherCard = ({ weatherData }) => {
   const { name, main, weather, sys } = weatherData;
 
   return (
