@@ -1,5 +1,3 @@
-/* Styles for WeatherHourlyForecast.js component */
-
 .hourly-forecast-container {
   margin-top: 10px;
   padding: 5px;
@@ -18,56 +16,10 @@
   align-items: center;
 }
 
-.weather-card {
-  flex: 1;
-  margin: 1px;
-  padding: 3px;
-  text-align: center;
-}
-
-
-
-.weather-card.dark {
-  border-color: #666;
-}
-
-.weather-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.weather-info div {
-
-  margin-right: 3px;
-}
-
-.weather-info svg {
-  height: 32px;
-  width: 32px;
-}
-
 .hourly-forecast-cards .weather-info .temperature {
   font-size: 1rem;
   font-weight: 100;
 }
 
-.weather-details {
-  font-size: .6rem;
-}
 
-.weather-details div {
-  margin-bottom: 5px;
-}
 
-/* Mobile Styles */
-@media (max-width: 600px) {
-  .hourly-forecast-cards {
-    flex-direction: column;
-  }
-
-  .weather-card {
-    flex: 0 1 calc(50% - 20px);
-  }
-}
