@@ -17,7 +17,9 @@ const getWeatherIcon = (weatherDescription) => {
 };
 
 const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
-  const { name, main, weather, sys } = weatherData;
+  const { name, main, weather, sys, visibility, wind } = weatherData;
+
+  
 
   return (
     <div className="weather-card">
@@ -25,16 +27,17 @@ const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
       <div className="weather-info">
         <div>{getWeatherIcon(weather[0].main)}</div>
         <div className="temperature">{Math.round(main.temp)}°C</div>
+        {showTime && <div className="feels-like">Feels like: {Math.round(main.feels_like)}°C</div>}
+        <div className="humidity">Humidity: {main.humidity}%</div>
+        <div className="pressure">Pressure: {main.pressure} hPa</div>
+        <div className="visibility">Visibility: {visibility / 1000} km</div>
+        <div className="wind">Wind: {wind.speed} m/s</div>
       </div>
       <div className="weather-details">
-      <div>{weather[0].description}</div>
-      {showSunriseSunset && (
-        <React.Fragment>
-          <div>Sunrise: {moment.unix(sys.sunrise).format("HH:mm")}</div>
-          <div>Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
-        </React.Fragment>
-      )}
-    </div>
+        <div>{weather[0].description}</div>
+        <div>Sunrise: {moment.unix(sys.sunrise).format("HH:mm")}</div>
+        <div>Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
+      </div>
     </div>
   );
 };
