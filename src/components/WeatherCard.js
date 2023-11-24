@@ -28,7 +28,7 @@ const getWeatherIcon = (weatherDescription) => {
   }
 };
 
-const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
+const WeatherCard = ({ weatherData, showTime }) => {
   const { name, main, weather, sys, visibility, wind } = weatherData;
 
   return (
@@ -36,32 +36,35 @@ const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
       <h2>{name}</h2>
       <div className="weather-container">
         <div className="weather-info">
-          <div className="temperature">
-            <WiThermometer  />
-            {Math.round(main.temp)}°C
-          </div>
+          <div>{getWeatherIcon(weather[0].main)}</div>
+          {showTime && (
+            <div className="temperature">
+              <WiThermometer size={16} />
+              {Math.round(main.temp)}°C
+            </div>
+          )}
+
           <div className="other-info">
-            <div>{getWeatherIcon(weather[0].main)}</div>
-            {showTime && (
-              <div className="feels-like">
-                <WiThermometer  />
-                Feels like: {Math.round(main.feels_like)}°C
-              </div>
-            )}
+
+            <div className="feels-like">
+              <WiThermometer />
+              Feels like: {Math.round(main.feels_like)}°C
+            </div>
+
             <div className="humidity">
-              <WiHumidity  />
+              <WiHumidity />
               Humidity: {main.humidity}%
             </div>
             <div className="pressure">
-              <WiBarometer  />
+              <WiBarometer />
               Pressure: {main.pressure} hPa
             </div>
             <div className="visibility">
-              <WiDayFog  />
+              <WiDayFog />
               Visibility: {visibility / 1000} km
             </div>
             <div className="wind">
-              <WiStrongWind  />
+              <WiStrongWind />
               Wind: {wind.speed} m/s
             </div>
           </div>
@@ -71,7 +74,7 @@ const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
       <div className="weather-details">
         <div>{weather[0].description}</div>
         <div><WiSunrise />Sunrise: {moment.unix(sys.sunrise).format("HH:mm")}</div>
-        <div><WiSunset  />Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
+        <div><WiSunset />Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
       </div>
     </div>
   );
