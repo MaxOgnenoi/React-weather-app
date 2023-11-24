@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherCard from "./WeatherCard";
+import HourlyWeatherCard from "./HourlyWeatherCard"; // Import the new component
 import "../styles/WeatherHourlyForecast.css";
 
 const WeatherHourlyForecast = ({ hourlyForecastData }) => {
@@ -14,7 +14,7 @@ const WeatherHourlyForecast = ({ hourlyForecastData }) => {
       <h2>Hourly Forecast</h2>
       <div className="hourly-forecast-cards">
         {hourlyForecastList.map((forecast) => (
-          <WeatherCard key={forecast.dt} weatherData={forecast} showTime />
+          <HourlyWeatherCard key={forecast.dt} weatherData={forecast} showTime />
         ))}
       </div>
     </div>
