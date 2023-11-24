@@ -1,3 +1,4 @@
+
 import React from "react";
 import moment from "moment";
 import { WiDaySunny, WiRain, WiCloudy, WiDayCloudy } from "react-icons/wi";
@@ -13,11 +14,11 @@ const getWeatherIcon = (weatherDescription) => {
       return <WiCloudy size={64} />;
     default:
       return <WiDayCloudy size={64} />;
-  }
+  };
 };
 
-const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
-  const { name, main, weather, sys } = weatherData;
+const HourlyWeatherCard = ({ weatherData, showTime }) => {
+  const { name, main, weather } = weatherData;
 
   return (
     <div className="weather-card">
@@ -27,16 +28,11 @@ const WeatherCard = ({ weatherData, showTime, showSunriseSunset }) => {
         <div className="temperature">{Math.round(main.temp)}°C</div>
       </div>
       <div className="weather-details">
-      <div>{weather[0].description}</div>
-      {showSunriseSunset && (
-        <React.Fragment>
-          <div>Sunrise: {moment.unix(sys.sunrise).format("HH:mm")}</div>
-          <div>Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
-        </React.Fragment>
-      )}
-    </div>
+        <div>{weather[0].description}</div>
+        {showTime && <div>Time: {moment.unix(weatherData.dt).format("HH:mm")}</div>}
+      </div>
     </div>
   );
 };
 
-export default WeatherCard;
+export default HourlyWeatherCard;

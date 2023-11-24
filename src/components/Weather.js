@@ -44,9 +44,10 @@ function Weather() {
     <div className="weather-container">
       <SearchBox setCity={setCity} />
       {weatherData && <WeatherCard weatherData={weatherData} />}
-      {hourlyForecastData && <WeatherHourlyForecast hourlyForecastData={hourlyForecastData} />}
-      {forecastData && <WeatherFiveDayForecast forecastData={forecastData} />} {/* Include WeatherFiveDayForecast component */}
+      {hourlyForecastData && <WeatherHourlyForecast hourlyForecastData={hourlyForecastData} showSunriseSunset={false} />}
+      {forecastData && <WeatherFiveDayForecast forecastData={forecastData} />}
       {weatherData && <WeatherMap weatherData={weatherData} />}
+
     </div>
   );
 }
