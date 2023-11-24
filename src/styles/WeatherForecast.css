@@ -19,52 +19,7 @@
     flex-wrap: wrap;
   }
   
-  .weather-card {
-    flex: 0 1 calc(33.33% - 20px);
-    margin: 10px;
-    padding: 15px;
-   
-    border-radius: 8px;
-    text-align: center;
-    
-  }
   
   
-  .weather-card.dark {
-    border-color: #666;
-  }
   
-  .weather-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .weather-info div {
-    margin-right: 15px;
-  }
-  
-  .weather-info .temperature {
-    font-size: 28px;
-  }
-  
-  .weather-details {
-    font-size: 16px;
-  }
-  
-  .weather-details div {
-    margin-bottom: 5px;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 600px) {
-    .forecast-cards {
-      flex-direction: column;
-    }
-  
-    .weather-card {
-      flex: 0 1 calc(50% - 20px);
-    }
-  }
   
