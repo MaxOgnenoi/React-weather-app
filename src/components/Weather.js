@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherCard from "./WeatherCard";
 import WeatherFiveDayForecast from "./WeatherFiveDayForecast";
 import WeatherHourlyForecast from "./WeatherHourlyForecast";
-import WeatherMap from "./WeatherMap";
+
 import SearchBox from "./SearchBox";
 import "../styles/Weather.css";
 
@@ -46,7 +46,7 @@ function Weather() {
       {weatherData && <WeatherCard weatherData={weatherData} />}
       {hourlyForecastData && <WeatherHourlyForecast hourlyForecastData={hourlyForecastData} />}
       {forecastData && <WeatherFiveDayForecast forecastData={forecastData} />}
-      {weatherData && <WeatherMap weatherData={weatherData} />}
+     
     </div>
   );
 }
