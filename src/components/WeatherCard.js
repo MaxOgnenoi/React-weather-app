@@ -37,15 +37,12 @@ const WeatherCard = ({ weatherData, showTime }) => {
       <div className="weather-container">
         <div className="weather-info">
           <div>{getWeatherIcon(weather[0].main)}</div>
-          {showTime && (
-            <div className="temperature">
-              <WiThermometer size={16} />
-              {Math.round(main.temp)}°C
-            </div>
-          )}
+          <div className="temperature">
+            <WiThermometer size={16} />
+            {Math.round(main.temp)}°C
+          </div>
 
           <div className="other-info">
-
             <div className="feels-like">
               <WiThermometer />
               Feels like: {Math.round(main.feels_like)}°C
