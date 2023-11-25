@@ -1,25 +1,21 @@
-.hourly-forecast-container {
-  margin-top: 10px;
-  padding: 5px;
+.forecast-header h2 {
+  font-size: 2.5rem;
+  font-weight: 300; 
+}
+.hourly-forecast-cards {
+  display: flex;
+    justify-content: space-around;
+  align-items: center;
   
 }
 
-.hourly-forecast-container h2 {
-  font-size: 24px;
-  margin-bottom: 5px;
-  font-weight: 100;
-}
-
-.hourly-forecast-cards {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .hourly-forecast-cards .weather-info .temperature {
   font-size: 1rem;
   font-weight: 100;
 }
-
+.hourly-forecast-cards svg{
+  width: 2rem;
+}
 
 

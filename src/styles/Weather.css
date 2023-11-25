@@ -88,16 +88,17 @@
 }
 
 .weather-details {
-  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  justify-content: space-around;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+.weather-details svg{
+  margin-right: 1rem;
 }
 
-.weather-details div {
-  margin-bottom: 10px;
-}
-
-.weather-details div {
-  margin-bottom: 10px;
-}
 
 .search-box {
   position: relative;
