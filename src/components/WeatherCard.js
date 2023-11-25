@@ -5,7 +5,6 @@ import {
   WiRain,
   WiCloudy,
   WiDayCloudy,
-  WiThermometer,
   WiHumidity,
   WiBarometer,
   WiDayFog,
@@ -35,41 +34,35 @@ const WeatherCard = ({ weatherData, showTime }) => {
     <div className="weather-card">
       <h2>{name}</h2>
       <div className="weather-container">
-        <div className="weather-info">
-          <div>{getWeatherIcon(weather[0].main)}</div>
-          <div className="temperature">
-            <WiThermometer size={16} />
-            {Math.round(main.temp)}°C
+        <div className="temperature">
+          {Math.round(main.temp)}°C
+        </div>
+        <div className="feels-like">
+
+          Feels like: {Math.round(main.feels_like)}°C
+        </div>
+        <div>{getWeatherIcon(weather[0].main)}
+          {weather[0].description}</div>
+        <div className="other-info">
+          <div className="humidity">
+            <WiHumidity />
+            Humidity: {main.humidity}%
           </div>
-
-          <div className="other-info">
-            <div className="feels-like">
-              <WiThermometer />
-              Feels like: {Math.round(main.feels_like)}°C
-            </div>
-
-            <div className="humidity">
-              <WiHumidity />
-              Humidity: {main.humidity}%
-            </div>
-            <div className="pressure">
-              <WiBarometer />
-              Pressure: {main.pressure} hPa
-            </div>
-            <div className="visibility">
-              <WiDayFog />
-              Visibility: {visibility / 1000} km
-            </div>
-            <div className="wind">
-              <WiStrongWind />
-              Wind: {wind.speed} m/s
-            </div>
+          <div className="pressure">
+            <WiBarometer />
+            Pressure: {main.pressure} hPa
+          </div>
+          <div className="visibility">
+            <WiDayFog />
+            Visibility: {visibility / 1000} km
+          </div>
+          <div className="wind">
+            <WiStrongWind />
+            Wind: {wind.speed} m/s
           </div>
         </div>
       </div>
-
       <div className="weather-details">
-        <div>{weather[0].description}</div>
         <div><WiSunrise />Sunrise: {moment.unix(sys.sunrise).format("HH:mm")}</div>
         <div><WiSunset />Sunset: {moment.unix(sys.sunset).format("HH:mm")}</div>
       </div>
