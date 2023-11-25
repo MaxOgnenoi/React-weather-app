@@ -30,25 +30,50 @@
 }
 
 .other-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: .5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  justify-content: center;
 }
 
 .other-info>div {
-  box-sizing: border-box;
-  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+  align-items: center; 
+  justify-content: space-between; 
+  width: 13rem;
+  padding: 0.5rem;
   border: solid .05rem white;
   border-radius: .7rem;
-  width: 23%;
-
 }
 
-.feels-like{
+.other-info>div svg {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 10px;
+}
+.other-info>div span {
+  flex-grow: 1;
+  }
+
+
+.feels-like {
   font-size: 1.3rem;
 }
 
+.condition {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.9rem;
+  font-weight: 300;
+}
+
+.condition svg {
+  margin-right: 1rem;
+}
 
 .weather-card.dark {
   border-color: #666;
