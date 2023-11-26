@@ -36,11 +36,11 @@
 .other-info>div {
   display: flex;
   flex-direction: column;
-  height: 4rem;
+  height: 5rem;
   align-items: center; 
   justify-content: space-between; 
-  width: 13rem;
-  padding: 0.5rem;
+  width: 17rem;
+  padding: 0.2rem;
   border: solid .05rem white;
   border-radius: .7rem;
 }
