@@ -34,11 +34,10 @@ const WeatherCard = ({ weatherData, showTime }) => {
     <div className="weather-card">
       <h2>{name}</h2>
       <div className="weather-container">
-        <div className="temperature">
+        <div className="temperature main-temperature">
           {Math.round(main.temp)}°C
         </div>
         <div className="feels-like">
-
           Feels like: {Math.round(main.feels_like)}°C
         </div>
         <div className="condition">{getWeatherIcon(weather[0].main)}
