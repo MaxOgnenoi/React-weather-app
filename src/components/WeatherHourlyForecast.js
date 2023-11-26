@@ -16,7 +16,7 @@ const WeatherHourlyForecast = ({ hourlyForecastData }) => {
       </div>
       <div className="hourly-forecast-cards">
         {hourlyForecastList.map((forecast) => (
-          <div key={forecast.dt} className="hourly-time">
+          <div className="hourly-time" key={forecast.dt} >
             <HourlyWeatherCard weatherData={forecast} showTime />
           </div>
         ))}

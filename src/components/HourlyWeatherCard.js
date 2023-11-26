@@ -28,7 +28,7 @@ const HourlyWeatherCard = ({ weatherData, showTime }) => {
                 <div className="icon">{getWeatherIcon(weather[0].main)}</div>
                 <div className="temperature">{Math.round(main.temp)}°C</div>
             </div>
-            <div className="weather-details">
+            <div className="weather-clouds">
                 <div className="clouds">{weather[0].description}</div>
             </div>
         </div>
