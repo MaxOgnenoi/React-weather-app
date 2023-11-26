@@ -14,19 +14,15 @@
 
 .weather-card h2 {
   margin-top: .1rem;
-  font-weight: 100;
+  font-weight: 500;
   font-size: 3rem;
   margin-bottom: 0.7rem;
 }
 
-.temperature {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0;
+
+.temperature.main-temperature {
   font-size: 5rem;
   font-weight: 100;
-  margin-bottom: 1rem;
 }
 
 .other-info {
@@ -82,8 +78,7 @@
 .weather-info {
   display: flex;
   flex-direction: column;
-  /* Stack children vertically */
-  align-items: center;
+    align-items: center;
   margin-bottom: 20px;
 }
 
@@ -106,6 +101,8 @@
   align-items: center;
   margin-bottom: 20px;
   width: 100%;
+  border: solid .1rem black;
+  border-radius: 1.5rem;
 }
 
 .search-box svg {
@@ -115,27 +112,27 @@
 }
 
 .search-box input {
-  background: linear-gradient(to right, #dfb6b2, #854f6c);
-  color: black;
+    color: black;
+  background: none;
   box-sizing: border-box;
   border: none;
-  height: 40px;
-  padding-left: 30px;
-  border-radius: 20px 0 0 20px;
+  height: 3rem;
+  padding-left: 2rem;
+  border-radius: 1.5rem 0 0 1.5rem;
   width: 100%;
-  font-size: 16px;
+  font-size: 1.3rem;
   outline: none;
 }
 
 .searchBtn {
   cursor: pointer;
   border: none;
-  background-color: #854f6c;
+  background: none;
   font-size: 20px;
   box-sizing: border-box;
   width: 30%;
-  height: 40px;
-  border-radius: 0 20px 20px 0;
+  height: 3rem;
+  border-radius: 0 1.5rem 1.5rem 0;
   outline: none;
 }
 

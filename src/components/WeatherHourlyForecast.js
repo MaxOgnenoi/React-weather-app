@@ -21,7 +21,6 @@ const WeatherHourlyForecast = ({ hourlyForecastData }) => {
           </div>
         ))}
       </div>
-
     </div>
   );
 

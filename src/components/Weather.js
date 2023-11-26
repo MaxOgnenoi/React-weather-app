@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherCard from "./WeatherCard";
-import WeatherFiveDayForecast from "./WeatherFiveDayForecast";
-import WeatherHourlyForecast from "./WeatherHourlyForecast";
 
+import WeatherHourlyForecast from "./WeatherHourlyForecast";
 import SearchBox from "./SearchBox";
 import "../styles/Weather.css";
 
@@ -11,7 +10,7 @@ function Weather() {
   const [city, setCity] = useState("New York City");
   const [weatherData, setWeatherData] = useState(null);
   const [hourlyForecastData, setHourlyForecastData] = useState(null);
-  const [forecastData, setForecastData] = useState(null);
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,10 +25,6 @@ function Weather() {
         );
         setHourlyForecastData(hourlyForecastResponse.data);
 
-        const forecastResponse = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`
-        );
-        setForecastData(forecastResponse.data);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       }
@@ -45,8 +40,6 @@ function Weather() {
       <SearchBox setCity={setCity} />
       {weatherData && <WeatherCard weatherData={weatherData} />}
       {hourlyForecastData && <WeatherHourlyForecast hourlyForecastData={hourlyForecastData} />}
-      {forecastData && <WeatherFiveDayForecast forecastData={forecastData} />}
-     
     </div>
   );
 }
