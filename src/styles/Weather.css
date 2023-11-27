@@ -102,12 +102,14 @@
   width: 100%;
   border: solid .1rem black;
   border-radius: 1.5rem;
+  transition: border-color 1.3s ease, color 1.3s ease;
 }
 
 .search-box svg {
   color: black;
   position: absolute;
   left: 10px;
+  transition: color 1.3s ease;
 }
 
 .search-box input {
@@ -121,6 +123,7 @@
   width: 100%;
   font-size: 1.3rem;
   outline: none;
+  transition: color 1.3s ease;
 }
 
 .searchBtn {
@@ -133,17 +136,15 @@
   height: 3rem;
   border-radius: 0 1.5rem 1.5rem 0;
   outline: none;
+  transition: color 1.3s ease;
 }
-
 
 .app-container.dark .search-box {
   border-color: white;
-  /* Set border color to white in dark mode */
 }
 
 .app-container.dark .search-box svg {
   color: white;
-
 }
 
 .app-container.dark .search-box input {
