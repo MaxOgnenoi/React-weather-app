@@ -370,6 +370,7 @@ header h1 {
 }
 
 .app-container.dark header h1 {
-  color: white; /* Adjust the color for dark mode */
+  color: white; 
+  transition: color 2s ease-in-out;
 }
 
