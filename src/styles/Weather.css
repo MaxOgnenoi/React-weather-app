@@ -72,9 +72,6 @@
   margin-right: 1rem;
 }
 
-.weather-card.dark {
-  border-color: #666;
-}
 
 .weather-info {
   display: flex;
@@ -139,40 +136,20 @@
 }
 
 
-
-
-
-
-/* Add more styles as needed */
-
-/* Dark Mode */
-.weather-container.dark {
-  color: #fff;
+.app-container.dark .search-box {
+  border-color: white;
+  /* Set border color to white in dark mode */
 }
 
-.weather-card.dark {
-  background-color: #444;
-  border-color: #666;
+.app-container.dark .search-box svg {
+  color: white;
+
 }
 
-.search-box.dark input {
-  background-color: #333;
-  border-color: #666;
-  color: #fff;
+.app-container.dark .search-box input {
+  color: white;
 }
 
-.search-box.dark .suggestion-container {
-  background-color: #444;
-  border-color: #666;
-}
-
-.search-box.dark {
-  border: solid .1rem white;
-}
-
-/* Mobile Styles */
-@media (max-width: 600px) {
-  .weather-info {
-    flex-direction: column;
-  }
+.app-container.dark .searchBtn {
+  color: white;
 }
