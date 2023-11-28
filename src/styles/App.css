@@ -329,7 +329,7 @@ p.morning {
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
-  overflow: hidden; /* Ensure that the gradient overlay doesn't overflow */
+  overflow: hidden; 
 }
 
 .app-container::before {
