@@ -1,5 +1,5 @@
 import React from "react";
-import HourlyWeatherCard from "./HourlyWeatherCard"; // Import the new component
+import HourlyWeatherCard from "./HourlyWeatherCard"; 
 import "../styles/WeatherHourlyForecast.css";
 
 const WeatherHourlyForecast = ({ hourlyForecastData }) => {
